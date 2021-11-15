@@ -1,0 +1,30 @@
+open System
+    
+// Fibonacci con guardas (recursivo)
+
+let rec Fibonacci2 x = 
+    match x with
+    | 0 | 1 | 2 -> 1 
+    | _ -> Fibonacci2((x-1)) + Fibonacci2((x-2))
+        
+///---------------------------------------///      
+      
+// Fibonacci con condicionales (recursivo)
+
+let rec Fibonacci x = 
+    if x < 3 then 1
+    else Fibonacci((x-1)) + Fibonacci((x-2))
+        
+///---------------------------------------///
+
+[<EntryPoint>]
+let main argv =
+    Console.WriteLine("                        // Sucesión o serie de Fibonacci en F#//")
+    Console.WriteLine("----------------------------------------------------------------------------------------")
+    Console.Write("(Fibonacci con condicionales) El valor de la suma 14 de Fibonacci es igual a ")
+    printfn "%i" (Fibonacci(14))
+    Console.WriteLine("----------------------------------------------------------------------------------------")
+    Console.Write("(Fibonacci con guardas) El valor de la suma 14 de Fibonacci es igual a ")
+    printfn "%i" (Fibonacci2(14))
+    Console.WriteLine("----------------------------------------------------------------------------------------")
+    0
